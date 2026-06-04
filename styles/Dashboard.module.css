@@ -1,0 +1,183 @@
+.container {
+  min-height: 100vh;
+  background: #f4f4f6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 28px 20px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ── Header ─────────────────────────────── */
+.header {
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e2e6;
+}
+
+.brand {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #999;
+  margin: 5px 0 0;
+}
+
+/* ── Stat row ────────────────────────────── */
+.statsRow {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.statCard {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px 24px;
+  flex: 1;
+  min-width: 130px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-sizing: border-box;
+}
+
+.statNumber {
+  font-size: 38px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Lead grid ───────────────────────────── */
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 14px;
+}
+
+/* ── Lead card ───────────────────────────── */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.phone {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: 0.2px;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 99px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.badgeGreen {
+  background: #e8f7ef;
+  color: #197a45;
+}
+
+.badgeRed {
+  background: #fdecea;
+  color: #b91c1c;
+}
+
+.time {
+  font-size: 13px;
+  color: #aaa;
+  margin: 0;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #f0f0f2;
+  margin: 2px 0;
+}
+
+.reply {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.replyLabel {
+  font-weight: 600;
+  color: #333;
+  margin-right: 5px;
+}
+
+.noReply {
+  color: #bbb;
+  font-style: italic;
+  font-size: 13px;
+}
+
+/* ── Empty state ─────────────────────────── */
+.empty {
+  text-align: center;
+  color: #bbb;
+  font-size: 15px;
+  padding: 64px 20px;
+}
+
+/* ── Mobile ──────────────────────────────── */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 14px 48px;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
+  .statNumber {
+    font-size: 30px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,180 @@
+/* ── Shell ───────────────────────────────── */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Nav header ──────────────────────────── */
+.nav {
+  padding: 28px 0 0;
+  margin-bottom: 72px;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.3px;
+}
+
+/* ── Hero ────────────────────────────────── */
+.hero {
+  margin-bottom: 72px;
+}
+
+.headline {
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.subheading {
+  font-size: clamp(16px, 2.5vw, 19px);
+  line-height: 1.65;
+  color: #555;
+  max-width: 580px;
+}
+
+/* ── Features ────────────────────────────── */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.featureTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.featureText {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #777;
+}
+
+/* ── Policy pages ────────────────────────── */
+.policyNav {
+  padding: 28px 0;
+  margin-bottom: 48px;
+  border-bottom: 1px solid #eee;
+}
+
+.policyBackLink {
+  font-size: 14px;
+  color: #888;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.policyBackLink:hover {
+  color: #111;
+}
+
+.policyHeading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.policyDate {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.policyBody {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.policyBody h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+  margin: 36px 0 10px;
+}
+
+.policyBody p {
+  margin-bottom: 16px;
+}
+
+.policyBody ul {
+  margin: 0 0 16px 20px;
+}
+
+.policyBody li {
+  margin-bottom: 8px;
+}
+
+.policyPlaceholder {
+  color: #bbb;
+  font-style: italic;
+  padding: 40px 0;
+}
+
+/* ── Footer ──────────────────────────────── */
+.footer {
+  border-top: 1px solid #eee;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.footerLink {
+  font-size: 13px;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  color: #111;
+}
+
+.footerDot {
+  color: #ddd;
+  font-size: 13px;
+}
+
+/* ── Mobile ──────────────────────────────── */
+@media (max-width: 560px) {
+  .nav {
+    margin-bottom: 48px;
+  }
+
+  .hero {
+    margin-bottom: 48px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+
+  .policyHeading {
+    font-size: 24px;
+  }
+}
