@@ -1,35 +1,29 @@
 import twilio from 'twilio';
 import { createClient } from '@supabase/supabase-js';
 
+const twilioClient = twilio(
+  process.env.TWILIO_ACCOUNT_SID,
+  process.env.TWILIO_AUTH_TOKEN
+);
+
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
+);
+
 const SMS_BODY =
   "Hey, sorry we missed you — this is Fieldline demo. What can we help with today?";
 
 export default async function handler(req, res) {
-  console.log('[fieldline] env check', {
-    TWILIO_ACCOUNT_SID: process.env.TWILIO_ACCOUNT_SID,
-    TWILIO_AUTH_TOKEN: process.env.TWILIO_AUTH_TOKEN ? '(set)' : '(missing)',
-    TWILIO_PHONE_NUMBER: process.env.TWILIO_PHONE_NUMBER,
-    SUPABASE_URL: process.env.SUPABASE_URL,
-    SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY ? '(set)' : '(missing)',
-  });
-
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const twilioClient = twilio(
-    process.env.TWILIO_ACCOUNT_SID,
-    process.env.TWILIO_AUTH_TOKEN
-  );
-
-  const supabase = createClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_SERVICE_ROLE_KEY
-  );
-
+  // Twilio sends form-encoded bodies; Next.js parses them automatically
   const callerNumber = req.body?.From;
   const callStatus = req.body?.CallStatus;
 
+  // Only act on unanswered calls
   if (!callerNumber || callStatus !== 'no-answer') {
     return res.status(200).send('<Response></Response>');
   }
@@ -57,6 +51,7 @@ export default async function handler(req, res) {
     console.error('Supabase insert error:', err.message);
   }
 
+  // Respond with empty TwiML so Twilio doesn't complain
   res.setHeader('Content-Type', 'text/xml');
   return res.status(200).send('<Response></Response>');
 }
